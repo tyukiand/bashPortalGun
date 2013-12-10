@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# closes both portals
+
+source initPortals
+
+# remove portal files, if they exist
+source $PORTAL_FILE
+if [ -L "${ORANGE}/[orange]" ] 
+then 
+  rm "${ORANGE}/[orange]"
+fi
+
+if [ -L "${BLUE}/[blue]" ] 
+then 
+  rm "${BLUE}/[blue]"
+fi
+
+# remove both pathes
+sed -i "s,ORANGE=.*,ORANGE=,g" $PORTAL_FILE
+sed -i "s,BLUE=.*,BLUE=,g" $PORTAL_FILE

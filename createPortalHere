@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Places the portal of THIS_COLOR in the current working directory.
+# Creates a link called [THIS_COLOR_LOWERCASE] in the current
+# working directory. This link points to the directory where the
+# other portal is.
+
+THIS_COLOR=$1
+OTHER_COLOR=$2
+THIS_COLOR_LOWERCASE=$(echo $THIS_COLOR | tr '[:upper:]' '[:lower:]')
+OTHER_COLOR_LOWERCASE=$(echo $OTHER_COLOR | tr '[:upper:]' '[:lower:]')
+
+# read where the portal state file is, create one if necessary
+source initPortals
+
+THIS_PWD=$(grep $THIS_COLOR "$PORTAL_FILE" | cut -d'=' -f2)
+OTHER_PWD=$(grep $OTHER_COLOR "$PORTAL_FILE" | cut -d'=' -f2)
+
+# The portal files are called [blue] and [orange]
+# Since both start with a paren (uncommon for usual file names), 
+# you never have to think hard what color the closest portal has:
+# just type [ + Tab and let the auto-completion do it's work.
+THIS_LINK="[${THIS_COLOR_LOWERCASE}]"
+OTHER_LINK="[${OTHER_COLOR_LOWERCASE}]"
+
+# close the old portal of THIS_COLOR
+if [ -n "$THIS_PWD" ] && [ -L "${THIS_PWD}/${THIS_LINK}" ] 
+then 
+  rm "${THIS_PWD}/${THIS_LINK}"
+fi
+
+# close the old portal of the OTHER_COLOR
+if [ -n "$OTHER_PWD" ] && [ -L "${OTHER_PWD}/${OTHER_LINK}" ]
+then
+  rm "${OTHER_PWD}/${OTHER_LINK}"
+fi
+
+# update the current directory for this portal
+THIS_PWD=`pwd`
+
+# update the path to the new portal in the $PORTAL_FILE
+sed -i "s,${THIS_COLOR}=.*,${THIS_COLOR}=${THIS_PWD},g" $PORTAL_FILE
+
+# create link files with updated pathes if possible
+# (note: the opposite portal could be closed)
+if [ -n "$OTHER_PWD" ] 
+then 
+  ln -s "${OTHER_PWD}" ./${THIS_LINK}
+  ln -s "${THIS_PWD}" "${OTHER_PWD}/${OTHER_LINK}"
+else
+  # create a broken link for now. It's not very useful, but it reminds you 
+  # of the position of the first portal
+  ln -s "/.the.opposite.portal.of.${OTHER_COLOR_LOWERCASE}.is.not.open" ./${THIS_LINK}
+fi

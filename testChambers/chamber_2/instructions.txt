@@ -1,0 +1,9 @@
+Usage with deep directory hierarchies.
+
+Go to `a` and find the cube, place a portal there.
+cd - to this directory again.
+Go to `b`, place a portal in the `button` folder.
+Move the turret to the folder where the cube is.
+Move the cube to the `button` folder.
+Now try to swap the both files again using mv, but without portals 
+(you don't have to like it, it's just for comparison).

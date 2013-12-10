@@ -1,0 +1,11 @@
+No portals on moving objects!
+
+Open a portal here
+Go to 'moving', open another portal there
+Now move the whole directory 'moving' to 'moved':
+$ mv moving moved
+Observe that one of the portals is broken, and the other cannot be removed by 'pClose'.
+Use something like
+$ find . -name "\[*\]"
+to find the broken portals, then remove them manually.
+Portals in moving folders are not supported, sorry.

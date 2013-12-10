@@ -1,0 +1,9 @@
+Basic usage.
+
+Go to 'a', open a portal there with 'pBlue'
+Go to 'b', open a second portal there with 'pOrange'
+Use cd on the second portal to come back to 'a'
+Use mv to push the cube through the portal to 'b'
+Use 'pWhere' to see where both portals are.
+Use 'pClose' to close both portals.
+Use 'pWhere' again.
