@@ -1,0 +1,8 @@
+The prompt.
+
+Take a look at the comments in 'portalPromptAddon'.
+It tells you how to modify your prompt so that you can see if there are
+some portals in the current directory. 
+
+After adjusting your ~/.bashrc, goto `a` and `b` and play around with
+the cube again, if you want...
