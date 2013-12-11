@@ -7,8 +7,8 @@
 # 
 # To add a portal-indicator to your prompt permanently, you have to
 # update your ~/.bashrc, for example, you could add following line:
-# export PROMPT_COMMAND='export PS1="\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]\u@\h `portalPromptAddon` \[\033[01;34m\]\w \n\[\033[00m\]\$ "'
-# The important part is in the `backticks`: here we call `portalPromptAddon` without arguments.
+# export PROMPT_COMMAND='export PS1="\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]\u@\h `portalPromptAddon.sh` \[\033[01;34m\]\w \n\[\033[00m\]\$ "'
+# The important part is in the `backticks`: here we call `portalPromptAddon.sh` without arguments.
 #
 # This will upgrade your $PS1 (prompt) every time you execute a command in a bash 
 # (or just press enter to update the indicator).
@@ -17,6 +17,8 @@
 #
 # username@host [blue/orange] ~/your/path
 # $ your commands
+#
+# You can also use `portalPromptAddon.sh true` to show the name of the target: [blue -> where]
 #
 # Remember that you have to restart bash or source .bashrc to make the changes visible.
 # Just experiment a little bit, adjust it until it suits your needs (I mean the prompt,

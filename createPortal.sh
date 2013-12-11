@@ -23,7 +23,7 @@ THIS_COLOR_LOWERCASE=$(echo $THIS_COLOR | tr '[:upper:]' '[:lower:]')
 OTHER_COLOR_LOWERCASE=$(echo $OTHER_COLOR | tr '[:upper:]' '[:lower:]')
 
 # read where the portal state file is, create one if necessary
-source initPortals
+source initPortals.sh
 
 THIS_POSITION=$(grep $THIS_COLOR "$PORTAL_FILE" | cut -d'=' -f2)
 OTHER_POSITION=$(grep $OTHER_COLOR "$PORTAL_FILE" | cut -d'=' -f2)

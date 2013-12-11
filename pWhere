@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source initPortals
+source initPortals.sh
 cat $PORTAL_FILE | tail -n 2

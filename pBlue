@@ -1,3 +1,3 @@
 #!/bin/bash
 
-createPortal "$1" BLUE ORANGE
+createPortal.sh "$1" BLUE ORANGE

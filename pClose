@@ -2,7 +2,7 @@
 
 # closes both portals
 
-source initPortals
+source initPortals.sh
 
 # remove portal files, if they exist
 source $PORTAL_FILE
