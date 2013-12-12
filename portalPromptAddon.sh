@@ -30,11 +30,12 @@ source portalUtils.sh
 # parse the input: show target true or not?
 SHOW_TARGET=$1
 
-function showTarget {
-  LINK=$1
+function showTarget() {
+  local linkName=$1
   if [ "$SHOW_TARGET" == "true" ]
   then
-    printf " -> $(basename $(readlink "$LINK"))"
+    fullpath=$(readlink "$linkName")
+    printf " -> $(basename $fullpath)"
   fi
 }
 
@@ -44,8 +45,8 @@ orangeLink=$(portalLinkName orange)
 
 if [ -L "$blueLink" ] 
 then
-  printf "\[\033[01;36m\][blue$(showTarget [blue])]"
+  printf "\[\033[01;36m\][blue`showTarget \"$blueLink\"`]"
 elif [ -L "$orangeLink" ]
 then 
-  printf "\[\033[01;33m\][orange$(showTarget [orange])]"
+  printf "\[\033[01;33m\][orange`showTarget \"$orangeLink\"`]"
 fi

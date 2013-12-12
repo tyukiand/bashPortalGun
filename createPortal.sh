@@ -4,12 +4,12 @@
 # Creates a link called [thisColor] in newPosition.
 # This link points to the directory where the other portal is.
 
-# load functions
-source portalUtils.sh
-
 # read where the portal state file is, create one if necessary
 # it initialises the $PORTAL_FILE variable.
 source initPortals.sh
+
+# load functions
+source portalUtils.sh
 
 # read the new position of the portal, check if it's a directory
 # (otherwise propose to use gray rigolith gel?)
@@ -37,9 +37,9 @@ otherPosition=$(readPosition $otherColor)
 thisLink=$(portalLinkName $thisColor)
 otherLink=$(portalLinkName $otherColor)
 
-# close the old portals
-closePortal "$thisPosition" $thisLink
-closePortal "$otherPosition" $otherLink
+# close the old portals, don't touch the entries in $PORTAL_FILE
+closePortal $thisColor removeOnlySymlink
+closePortal $otherColor removeOnlySymlink
 
 # update the path to the new portal in the $PORTAL_FILE
 writePosition $thisColor "$newPosition"

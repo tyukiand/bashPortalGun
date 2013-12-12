@@ -11,7 +11,7 @@
 # Returns: absolute path to directory where the portal is
 function readPosition() {
   local color=$1 
-  echo $(grep $color "$PORTAL_FILE" | cut -d'=' -f2)
+  echo $(grep ${color,,} "$PORTAL_FILE" | cut -d'=' -f2)
 }
 
 # Updates position in the $PORTAL_FILE
@@ -22,7 +22,7 @@ function readPosition() {
 function writePosition() {
   local color=$1
   local position=$2
-  sed -i "s,${color}=.*,${color}=${position},g" $PORTAL_FILE
+  sed -i "s,${color,,}=.*,${color,,}=${position},g" $PORTAL_FILE
 }
 
 # Returns the name of the link file (currently [blue], [orange])
@@ -35,13 +35,14 @@ function portalLinkName() {
 #
 # Parameters: 
 #   color - color of the portal
-#   position - the folder where the symlink file is expected to be.
-#   linkFileName - the name of the symlink
+#   removeOnlyLink - does not remove the entry in $PORTAL_FILE if
+#                 the second variable is nonempty
 #
 # Returns: 
 #   Nothing
 function closePortal() {
   local color=$1
+  local removeOnlyLink=$2
   local position=$(readPosition $color)
   local linkFileName=$(portalLinkName $color)
   if [ -n "$position" ] && [ -L "${position}/${linkFileName}" ]
@@ -49,5 +50,8 @@ function closePortal() {
     rm "${position}/${linkFileName}"
   fi
 
-  sed -i "s,${color,,}=.*,${color,,}=,g" $PORTAL_FILE
+  if [ -z "$removeOnlyLink" ]
+  then
+    sed -i "s,${color,,}=.*,${color,,}=,g" $PORTAL_FILE
+  fi
 }
