@@ -1,4 +1,5 @@
 #!/bin/bash
 
+# Shows position of both portals
 source initPortals.sh
 cat $PORTAL_FILE | tail -n 2
