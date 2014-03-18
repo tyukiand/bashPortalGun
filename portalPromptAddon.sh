@@ -20,6 +20,11 @@
 # username@host [blue/orange] ~/your/path
 # $ your commands
 #
+# One more line that is required in .bashrc to make it really useful is:
+# alias cd="cd -P"
+# 
+# Then all the pathes will be always compressed to their shortest form without symlinks.
+#
 # Remember that you have to restart bash or source .bashrc to make the changes visible.
 # Just experiment a little bit, adjust it until it suits your needs (I mean the prompt,
 # not this script, you can't do much here anyway...)
