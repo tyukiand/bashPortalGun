@@ -3,8 +3,6 @@
 # This file contains functions that are frequently used by other
 # bash portal gun scripts
 
-
-
 # Reads the position of the portal with the specified color from the
 # $PORTAL_FILE (assumes that this variable is set)
 #

@@ -18,7 +18,7 @@ if [ -z "$newPosition" ]
 then
   newPosition=`pwd`
 fi
-newPosition=`readlink -f $newPosition`
+newPosition=`readlink -f "$newPosition"`
 
 if ! [ -d "$newPosition" ]
 then
