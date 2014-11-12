@@ -27,9 +27,13 @@ If you are selectively moving multiple files from `a` to `b`, this
 quickly becomes annoying. Bash Portal Gun to the rescue!
 
 in_terminal_A $ pBlue # creates a blue portal in the directory `a`
+
 in_terminal_B $ pOrange # creates an orange portal in `b`
+
 in_terminal_B $ mv stuff \[orange\] # push stuff through the portal
+
 in_terminal_B $ cd \[orange\] # go through the portal yourself
+
 in_terminal_B $ pClose # close all portals
 
 Now you are with all your stuff in the directory `a`.
