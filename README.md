@@ -12,11 +12,11 @@ having to type long paths as arguments to `mv` or `cd`.
 
 # Available commands
 
-`$ pOrange <relativePath>` creates an orange portal
-`$ pBlue <relativePath>` creates a blue portal
-`$ pWhere` shows current positions of portals
-`$ pClose` closes both portals
-`$ pDestroy` finds and removes "zombie portals" 
+* `$ pOrange <relativePath>` creates an orange portal
+* `$ pBlue <relativePath>` creates a blue portal
+* `$ pWhere` shows current positions of portals
+* `$ pClose` closes both portals
+* `$ pDestroy` finds and removes "zombie portals" 
    (broken symlinks that arise whenever you move the containing directories)
 
 # An example problem
