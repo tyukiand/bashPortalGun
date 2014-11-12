@@ -59,7 +59,7 @@ and modify your shell prompt in the `~/.bashrc`.
 It will also modify the behavior of `cd` such that it handles 
 symlinks slightly differently (make sure you want this, remove 
 the alias otherwise).
-Since the installation script messes with you ~/.bashrc, it
+Since the installation script modifies your ~/.bashrc, it
 creates a backup copy: remove this copy after the installation, if
 you think that everything went smoothly. 
 
@@ -67,7 +67,7 @@ If something goes wrong, restore you original .bashrc as follows:
 
 $ mv ~/.bashrc_BACKUP_BY_BASH_PORTAL_GUN ~/.bashrc
 
-You can also take a look at this script, and run only
+You can also take a look at the installation script, and run only
 those steps that you really want. It has only a few lines, and
 is really straight forward.
 

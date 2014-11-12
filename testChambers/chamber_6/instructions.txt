@@ -8,4 +8,5 @@ Observe that one of the portals is broken, and the other cannot be removed by 'p
 Use something like
 $ find . -name "\[*\]"
 to find the broken portals, then remove them manually.
+You can also use `pDestroy` for that.
 Portals in moving folders are not supported, sorry.
