@@ -1,0 +1,11 @@
+Infinite loops
+
+This is just a warning.
+Be aware of the fact that there are tools that can crash or freeze when
+they are started in a directory that contains circular symlinks.
+
+This affects some build tools (for example, Maven just freezes if you
+forget a portal in your project folder).
+
+So don't forget to `pClose` everything before starting some tools that
+can get lost in the infinite loop.

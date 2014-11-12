@@ -6,4 +6,7 @@ Go to `b`, place a portal in the `button` folder.
 Move the turret to the folder where the cube is.
 Move the cube to the `button` folder.
 Now try to swap the both files again using mv, but without portals 
-(you don't have to like it, it's just for comparison).
+(you don't have to like it, it's just for comparison, so you can 
+feel the pain of not using the portal gun. Keep in mind that these
+folder structures are linear. Now imagine doing the same with
+trees of folders).

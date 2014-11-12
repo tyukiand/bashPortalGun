@@ -1,0 +1,5 @@
+#!/bin/bash
+# Forcefully destroys all "zombie-portals"
+find . -name "\[orange\]" -exec unlink {} \;
+find . -name "\[blue\]" -exec unlink {} \;
+

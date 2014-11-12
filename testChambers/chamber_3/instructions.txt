@@ -8,7 +8,9 @@ have to `cd` there first.
 Take a look at this chamber.
 There is a room with a turret inside.
 You should not `cd` into the room (there is an
-evil target in there). Instead:
+evil turret in there, it could hurt you^^). 
+
+Instead do the following:
 
 $ pOrange room            # open a portal in the room
 $ pBlue                   # open a portal here

@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# This scripts installs the Bash Portal Gun
+#
+# It messes with you ~/.bashrc, so use it only at your own risk.
+
+# create a backup 
+cp ~/.bashrc ~/.bashrc_BACKUP_BY_BASH_PORTAL_GUN
+
+# start modifying the .bashrc
+echo "" >> ~/.bashrc
+echo "# bashPortalGun - START" >> ~/.bashrc
+echo "# You can simply remove all commands between START and END to deactivate the bashPortalGun" >> ~/.bashrc
+
+# Add the current directory to the PATH
+echo "export PATH=\$PATH:$(pwd)" >> ~/.bashrc
+
+# Force `cd` to collapse all the symlinks
+# So that we don't get paths like `/foo/[orange]/[blue]/[orange]` after making few jumps
+echo "alias cd='cd -P'" >> ~/.bashrc
+
+# Modify the prompt command
+# The only relevant part is the call to $(portalPromptAddon.sh), all the other parts can
+# be adjusted to suit you needs. See the comments in portalPromptAddon.sh for more information
+echo "export PROMPT_COMMAND='export PS1=\"\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]\u@\h \$(portalPromptAddon.sh true) \n\[\033[01;34m\]\w \n\[\033[00m\]\$ \"'" >> ~/.bashrc
+
+# end modifying .bashrc
+echo "# bashPortalGun - END" >> ~/.bashrc
