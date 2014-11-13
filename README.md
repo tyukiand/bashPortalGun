@@ -101,4 +101,6 @@ usage and caveats (`cd` to `chamber_n`, then `cat instructions.txt`).
 # Disclaimer
 
 These scripts obviously do not share any code or other data
-with the "Portal" game (Valve) or the portal-plugin for Vim.
+with the "Portal" game (Valve) or the portal-plugin for Vim
+(however, we have decided to follow the same color convention).
+Use at your own risk.
