@@ -13,7 +13,7 @@ echo "# bashPortalGun - START" >> ~/.bashrc
 echo "# You can simply remove all commands between START and END to deactivate the bashPortalGun" >> ~/.bashrc
 
 # Add the current directory to the PATH
-echo "export PATH=\$PATH:$(pwd)" >> ~/.bashrc
+echo "export PATH=\"\$PATH:$(pwd)\"" >> ~/.bashrc
 
 # Force `cd` to collapse all the symlinks
 # So that we don't get paths like `/foo/[orange]/[blue]/[orange]` after making few jumps
