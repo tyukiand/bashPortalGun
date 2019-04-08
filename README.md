@@ -8,7 +8,7 @@ It allows you to open portals in two different directories, and then to jump
 or to move files between these two directories using the portals, without 
 having to type long paths as arguments to `mv` or `cd`.
 
-![bashPortalGun screenshot](./bash_Portal_Gun_screenshot.png)
+![bashPortalGun screenshot](./bashPortalGun_screenshot.png)
 
 # Available commands
 
